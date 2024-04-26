@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+    div.fixed{
+  position:fixed;
+  bottom:0;
+  right:0;
+  width:180px;
+
+  border:3px solid red;
+  background-color:green;
+  }</style>
+</head>
+<body><div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul><center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+ <font size="3" class="sp">
+            <h1><br> <br> COVID-19 </h1>
+
+            <br><p>COVID" redirects here. For the ongoing pandemic, see COVID-19 pandemic. For other diseases caused by coronaviruses, see Coronavirus diseases
+</p>
+
+<p>Coronavirus disease 2019 (COVID-19) is a contagious disease caused by severe acute respiratory syndrome coronavirus 2 (SARS-CoV-2). The first
+    known case was identified in Wuhan, China, in <br>December 2019.[7] The disease has since spread worldwide, leading to an ongoing pandemic.</p>
+  <br>
+<h1> SYMPTOMS</h1>
+            <br>
+ <p>COVID-19 affects different people in different ways. Most infected people will develop mild to moderate illness and recover without hospitalization.</p>
+<ul><br>
+<h3>Most common symptoms:</h3>
+<br>
+<li>fever</li>
+
+<li>dry cough</li>
+<li>tiredness</li>
+<br><h3>Less common symptoms:</h3>
+<br><li>aches and pains</li>
+<li>sore throat</li>
+<li>diarrhoea</li>
+<li>conjunctivitis</li>
+<li>headache</li>
+<li>loss of taste or smell</li>
+<li>a rash on skin, or discolouration of fingers or toes</li>
+<br>
+<h3>   Serious symptoms:</h3>
+<br><li>difficulty breathing or shortness of breath</li>
+<li>chest pain or pressure</li>
+<li>loss of speech or movement</li>
+</ul>
+<p>Seek immediate medical attention if you have serious symptoms.<br>Always call before visiting your doctor or health facility.<br>
+People with mild symptoms who are otherwise healthy should manage<br> their symptoms at home.
+On average it takes 5�6 days from when<br> someone is infected with the virus for symptoms to show, <br>however it can take up to 14 days.<a href="./readMoreFromCovidCare.html "> Read More</a>
+ </p>
+<br>   <h1>PREVENTION</h1>
+ <br><h3>To prevent the spread of COVID-19:</h3>
+<br><ol>
+<li>Clean your hands often. Use soap and water, or an alcohol-based hand rub.</li>
+<li>Maintain a safe distance from anyone who is coughing or sneezing.</li>
+<li>Wear a mask when physical distancing is not possible.</li>
+<li>Don't touch your eyes, nose or mouth.</li>
+<li>Cover your nose and mouth with your bent elbow or a tissue when you cough or sneeze.</li>
+<li>Stay home if you feel unwell.</li>
+<li>If you have a fever, cough and difficulty breathing, seek medical attention.</li>
+<li>Calling in advance allows your healthcare provider to quickly direct you to the right health facility. This protects you, and prevents the spread of viruses and other infections.</li>
+
+<li>Masks can help prevent the spread of the virus from the person wearing the mask to others. Masks alone do not protect against COVID-19, and should be combined with physical distancing and hand hygiene. Follow the advice provided by your local health authority. </li>																																					</ol>																																													</body>
+</section>
+
+		</div>
+<a href="./bookAppointment.html"  style="
+  text-decoration:none;"><div class="fixed"><b  style="color:white;">Schedule Now
+      </a></div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+    </script>
+</body>
+
+</html>

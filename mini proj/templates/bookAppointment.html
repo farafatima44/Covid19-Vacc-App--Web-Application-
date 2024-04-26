@@ -1,0 +1,140 @@
+<!Doctype html>
+<html>
+<head>
+ <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+ <style>
+ .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: red;
+  border: none;
+  color: #FFFFFF;
+  text-align: middle;
+  font-size: 15px;
+  padding: 15px;
+  width: 500px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 15px;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+</style>
+</head>
+<body>
+
+    <div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul>
+                <center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+  <font size="3" class="sp">
+<h2><br><br>How to schedule COVID-19 Vaccine</h2>
+<br>
+<p>you can't choose the COVID-19 vaccine you receive.
+<br>It'll be determined by what inventory is availabe 
+<br>in your area.We'll hold selected time slot(s) and 
+<br>show your vaccine's manufacturer before you confirm.</p>
+
+<h4>One-dose vaccine:
+</h4>
+
+<p>during this session,you'll schedule one appointment 
+<br>date within a range of available dates.the dose 
+<br>will be a complete vaccine.</p>
+
+<h4>Two-dose vaccine</h4>
+
+<p>during this session you'll schedule two separate 
+<br>appointments.The timings of both equally important
+<br> doses is recommended by medical experts.The date
+<br> of your second visit will be determined by the date
+<br> of your first visit.The second dose is mandatory for 
+<br>vaccination completion</p>
+
+<h4>Info we'll ask for:</h4>
+
+<p> The vaccines are no cost to you.We will bill your
+<br> insurance provider or the appropriate federal
+<br> department.So grab your insurance card(s).
+If you<br> don't have insurance,we'll ask you to input a valid driver's<br> license /state ID number or social security number.
+<br>If you dont have this info,it's ok to continue <br>scheduling your vaccine.</p>
+<form action="./age.html">
+<br>
+<button class="button" style="vertical-align:right"><span><strong>Start Scheduling</span></button>
+</form> <br>
+<br>  <br>
+
+<a href="./main.html" style="text-align:center;">Cancel</a>
+
+		</section>
+
+		</div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+
+
+
+</body>
+</html>

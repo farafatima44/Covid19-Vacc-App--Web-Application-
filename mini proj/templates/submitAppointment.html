@@ -1,0 +1,342 @@
+<DOCTYPE html>
+    <html>
+    
+     <head><meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <title>
+         
+     </title>
+     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+     <style>
+     .button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: red;
+      border: none;
+      color: #FFFFFF;
+      text-align: middle;
+      font-size: 15px;
+      padding: 15px;
+      width: 600px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 15px;
+    }
+    
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .button:hover span {
+      padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    </style>
+     </head>
+    
+    <body><div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul><center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center><form action="confirmAppointment.html" method="POST">
+    <font size="3" class="sp">
+            <h1><br><br>Fill the below form to get your vaccine Scheduled!!!</h1>
+ <br>
+    
+    <b>
+        Select location where you want to be vaccinated:     
+      </b>
+        <select name="appointmentPincode" id="appointmentPincode">
+                <option value="select your pincode" required>select</option>
+        </select>    
+              
+        <br /><br />
+        <b>
+            Select your preffered Vaccination Date :   
+          </b> 
+
+          <input type="text" id="appointmentDate" name="appointmentDate">
+
+          <br /><br />
+          <b>
+            Select your preffered Vaccination Center :   
+          </b>
+
+          <select name="appointmentVaccinationCenter" id="appointmentVaccinationCenter" onchange="onChangeVaccineCenter(this.value)">
+                  <option value="select" required>select</option>
+          </select>
+
+          <br /><br />
+          <b>
+            Select your preffered Time Slot :   
+          </b> 
+
+          <select name="appointmentVaccinationSlot" id="appointmentVaccinationSlot" onchange="checkVaccineAvailability()">
+                  <option value="select" required>select</option>
+          </select>  
+
+          <br /><br />
+          <b>
+            Choose from one of Available Vaccines :   
+          </b> 
+
+          <select name="appointmentVaccine" id="appointmentVaccine" onchange="checkVaccineAvailability()">
+                  <option value="select" required>select</option>
+          </select>  
+
+          <br /><br />
+          <b>Vaccine Stock Availability for Date :</b> <span id="stockAvailabilityCheck"></span>
+          <br /><br />
+          <!-- Center Hourly Customer Handling Capacity : <span id="bandwidthAvailabilityCheck"> </span>
+          <br /><br /> -->
+    
+          <b>
+            Please Enter Your First Name and Last Name :   
+          </b> 
+
+          <input type="text" placeholder="Sharukh" name="appointmentFirstName" id="appointmentFirstName"> <input type="text" name="appointmentLastName" placeholder="Khan" id="appointmentLastName"> 
+
+          <br /><br />
+          <b>
+            Please Enter Your Aadhar No :   
+          </b> 
+
+          <input type="text" placeholder="111122223333" id="appointmentAadharNo" name="appointmentAadharNo"> 
+
+          <br /><br />
+    
+          <b>
+            Please Enter Your 10 digit Phone No :   
+          </b> 
+
+          <input type="text" placeholder="9876543210" id="appointmentPhoneNo" name="appointmentPhoneNo"> 
+
+          <br /><br />
+    
+          <b>
+            Please Enter Your Email ID :   
+          </b> 
+
+          <input type="text" placeholder="Sharuk.Khan@Gmail.com" id="appointmentEmailID" name="appointmentEmailID"> 
+
+          
+          <br /><br />
+
+              <br />
+    <button class="button" style="vertical-align:right"><span><strong>Submit </span></button><br>
+
+
+        <font size="4"> <a href="./main.html " >Cancel</a>
+        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+        <a href="./submitAppointment.html">Refill</a>
+    </form> 
+</div>
+<script>
+   vaccineAvaiablilityObject = "{{vaccineAvaiablilityObject}}";
+   vaccineAvaiablilityObject = vaccineAvaiablilityObject.replace(new RegExp("&"+"#"+"x27;", "g"), "\"");
+   vaccineAvaiablilityObject = vaccineAvaiablilityObject.replace(/\(/g, "[");
+   vaccineAvaiablilityObject = vaccineAvaiablilityObject.replace(/\)/g, "]");
+   vaccineAvaiablilityObject = JSON.parse(vaccineAvaiablilityObject);
+
+   vaccineBookedObject = "{{vaccineBookedObject}}";
+   vaccineBookedObject = vaccineBookedObject.replace(new RegExp("&"+"#"+"x27;", "g"), "\"");
+   vaccineBookedObject = vaccineBookedObject.replace(/\(/g, "[");
+   vaccineBookedObject = vaccineBookedObject.replace(/\)/g, "]");
+   vaccineBookedObject = JSON.parse(vaccineBookedObject);
+
+   function getAvailablePinocdes(df){
+     availablePincodes = [];
+     availablePincodes = vaccineAvaiablilityObject.arr.map(function(singleRow) {
+          return singleRow.Pincode;
+      });
+      uniqueAvailablePincodes = availablePincodes.filter(function(item, pos) {
+          return availablePincodes.indexOf(item) == pos;
+      })
+      return uniqueAvailablePincodes;
+   }
+
+   uqAvailablePincodes = getAvailablePinocdes(vaccineAvaiablilityObject);
+
+   appointmentPincode = document.getElementById('appointmentPincode');
+
+    for (var i = 0; i<uqAvailablePincodes.length; i++){
+        var opt = document.createElement('option');
+        opt.value = uqAvailablePincodes[i];
+        opt.innerHTML = uqAvailablePincodes[i];
+        appointmentPincode.appendChild(opt);
+    }
+
+    $(function() {
+       $( "#appointmentDate").datepicker({ minDate: 1,
+        maxDate:30,dateFormat: 'yy-mm-dd',
+        onSelect: function(dateText) {
+          console.log("Selected date: " + dateText + "; input's current value: " + this.value);
+          selectedDate = Date.parse(this.value);
+          todaysDate = new Date();
+          const diffTime = Math.abs(todaysDate - selectedDate);
+          const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+          console.log(diffTime + " milliseconds");
+          console.log(diffDays + " days");
+          onChangeVaccineDate(diffDays);
+        }
+      });
+     });
+
+     function getAvaialableVaccineCenters(df,pincode,vaccineDateIncrementer){
+        availableVaccineCenters = [];
+        availableVaccineCenters = df.arr.filter(function(item, pos) {
+              return item.Pincode == pincode && item.dateIncrementer == vaccineDateIncrementer;
+          });
+          uniqueAvailableVaccineCenters = availableVaccineCenters.filter(function(item, pos) {
+              return availableVaccineCenters.indexOf(item) == pos;
+          });
+          return uniqueAvailableVaccineCenters;
+      }
+
+     function onChangeVaccineDate(vaccineDateIncrementer){
+      uqAvailableVaccineCenters = getAvaialableVaccineCenters(vaccineAvaiablilityObject,appointmentPincode.value,vaccineDateIncrementer);
+      
+      appointmentVaccinationCenter = document.getElementById('appointmentVaccinationCenter');
+
+      for (var i = 0; i<uqAvailableVaccineCenters.length; i++){
+          var opt = document.createElement('option');
+          opt.value = uqAvailableVaccineCenters[i].vcntrID;
+          opt.innerHTML = uqAvailableVaccineCenters[i].CenterName;
+          appointmentVaccinationCenter.appendChild(opt);
+      }
+     }
+
+     function onChangeVaccineCenter(vaccineCenterID){
+      vaccineCenterObject = null;
+      vaccineCenterVaccines = [];
+       for (let i = 0; i < vaccineAvaiablilityObject.arr.length; i++) {
+        if(vaccineAvaiablilityObject.arr[i].vcntrID == vaccineCenterID){
+          vaccineCenterObject = vaccineAvaiablilityObject.arr[i];
+          var itemExists = false;
+          for (let j = 0; j < vaccineCenterVaccines.length; j++) {
+            if(vaccineCenterVaccines[j].vaccineName == vaccineCenterObject.VaccineName && vaccineCenterVaccines[j].vaccineID == vaccineCenterObject.vID){
+              var itemExists = true;
+            }
+          }
+          if(! itemExists) vaccineCenterVaccines.push({vaccineName : vaccineCenterObject.VaccineName, vaccineID : vaccineCenterObject.vID});
+        }
+       }
+       
+       workingHourStart = vaccineCenterObject.StartHour;
+       workingHourEnd = vaccineCenterObject.EndHour;
+
+       timeSlotArray = [];
+       for (let i = workingHourStart; i < workingHourEnd; i++) {
+        timeSlotArray.push(i + " - "+(Number(i)+1));
+       }
+
+       appointmentVaccinationSlot = document.getElementById('appointmentVaccinationSlot');
+      
+      for (var i = 0; i<timeSlotArray.length; i++){
+          var opt = document.createElement('option');
+          opt.value = timeSlotArray[i];
+          opt.innerHTML = timeSlotArray[i];
+          appointmentVaccinationSlot.appendChild(opt);
+      }
+
+      appointmentVaccine = document.getElementById('appointmentVaccine');
+      for (var i = 0; i<vaccineCenterVaccines.length; i++){
+          var opt = document.createElement('option');
+          opt.value = vaccineCenterVaccines[i].vaccineID;
+          opt.innerHTML = vaccineCenterVaccines[i].vaccineName;
+          appointmentVaccine.appendChild(opt);
+      }
+     }
+
+     function checkVaccineAvailability(){
+      availableSlots = 0;
+      userSelectedVaccineCenterID = document.getElementById('appointmentVaccinationCenter').value;
+      selectedDate = Date.parse(document.getElementById('appointmentDate').value);
+      todaysDate = new Date();
+      const diffTime = Math.abs(todaysDate - selectedDate);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      userSelectedVaccineID = document.getElementById('appointmentVaccine').value;
+
+       vaccineCenter_DT_Vac_Object = null;
+       for (let i = 0; i < vaccineAvaiablilityObject.arr.length; i++) {
+        if(vaccineAvaiablilityObject.arr[i].vcntrID == userSelectedVaccineCenterID && vaccineAvaiablilityObject.arr[i].dateIncrementer == diffDays && vaccineAvaiablilityObject.arr[i].vID == userSelectedVaccineID ){
+          vaccineCenter_DT_Vac_Object = vaccineAvaiablilityObject.arr[i];
+        }
+       }
+
+       appointment_VC_DT_VC_Count = 0;
+       for (let i = 0; i < vaccineBookedObject.arr.length; i++) {
+        if(vaccineBookedObject.arr[i].VaccineCenterID == userSelectedVaccineCenterID && Math.ceil(Math.abs(new Date() - Date.parse(vaccineBookedObject.arr[i].ScheduleDate)) / (1000 * 60 * 60 * 24)) == diffDays && vaccineBookedObject.arr[i].VaccineID == userSelectedVaccineID){
+          appointment_VC_DT_VC_Count++;
+        }
+       }
+
+       daily_VC_VC_Avialablity = vaccineCenter_DT_Vac_Object.DailyAvailability - appointment_VC_DT_VC_Count
+
+      document.getElementById("stockAvailabilityCheck").innerHTML = daily_VC_VC_Avialablity
+
+     }
+     </script>
+	</section>
+
+		</div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+
+</body>
+    
+</html>

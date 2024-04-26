@@ -1,0 +1,108 @@
+<DOCTYPE html>
+    <html>
+    
+     <head>
+        <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <style>
+     .button {
+      display: inline-block;
+      border-radius: 4px;
+      background-color: red;
+      border: none;
+      color: #FFFFFF;
+      text-align: middle;
+      font-size: 15px;
+      padding: 15px;
+      width: 600px;
+      transition: all 0.5s;
+      cursor: pointer;
+      margin: 15px;
+    }
+    
+    .button span {
+      cursor: pointer;
+      display: inline-block;
+      position: relative;
+      transition: 0.5s;
+    }
+    
+    .button span:after {
+      content: '\00bb';
+      position: absolute;
+      opacity: 0;
+      top: 0;
+      right: -20px;
+      transition: 0.5s;
+    }
+    
+    .button:hover span {
+      padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+      opacity: 1;
+      right: 0;
+    }
+    </style>
+     </head>
+    
+    <body>  <div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul><center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+             <font size="3" class="sp">
+        <p><br><br><br>Your Appointment is Confirmed, Appointment ID is : {{appointmentID}}</p>
+
+    <br>
+    
+    <a href="./main.html" style="text-align:center;">Cancel</a>
+
+		</section>
+
+		</div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+
+    </body>
+    
+
+    
+    </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+             <font size="3" class="sp">
+<h1><br><br>FLOW CHART  </h1>
+<img src="./static/flowchart.png" width="1300" height="600"><br>
+
+		</section>
+
+		</div>
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+</body>
+</html>

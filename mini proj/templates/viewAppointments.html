@@ -1,0 +1,124 @@
+<html>
+<head><meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<style>
+table {
+  border-collapse: collapse;
+  width:100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:hover {background-color:#f5f5f5;}
+
+
+	div.fixed{
+  position:fixed;
+  bottom:0;
+  right:0;
+  width:180px;
+
+  border:3px solid red;
+  background-color:green;
+ }
+</style>
+</head>
+<body><div class="wrap">
+
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+
+            <ul><center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+
+      	 </div>
+
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+            <br>
+<h3> <br> <br>Booked Appointments are Below</h3>
+            <br>
+<table>
+    <tr>
+        <th>Appointment ID</th>
+        <th>UserFirstName</th>
+        <th>UserLastName</th>
+        <th>AadharNo</th>
+        <th>User PhoneNo</th>
+        <th>EmailID</th>
+        <th>ScheduleDate</th>
+        <th>ScheduleStartHour</th>
+        <th>ScheduleEndHour</th>
+        <th>CenterName</th>
+        <th>Address</th>
+        <th>Pincode</th>
+        <th>VaccineName</th>
+        <th>AppointmentStatus</th>
+    </tr>
+  
+  {% for singleAppointment in appointmentsdict.arr %}
+   <tr >
+        <th>{{singleAppointment.ID}}</th>
+        <th>{{singleAppointment.UserFirstName}}</th>
+        <th>{{singleAppointment.UserLastName}}</th>
+        <th>{{singleAppointment.AadharNo}}</th>
+        <th>{{singleAppointment.userPhoneNo}}</th>
+        <th>{{singleAppointment.EmailID}}</th>
+        <th>{{singleAppointment.ScheduleDate}}</th>
+        <th>{{singleAppointment.ScheduleStartHour}}</th>
+        <th>{{singleAppointment.ScheduleEndHour}}</th>
+        <th>{{singleAppointment.CenterName}}</th>
+        <th>{{singleAppointment.Address}}</th>
+        <th>{{singleAppointment.Pincode}}</th>
+        <th>{{singleAppointment.VaccineName}}</th>
+        <th>{{singleAppointment.AppointmentStatus}}</th>
+  </tr>
+  {% endfor %}
+</table>
+<a href="./main.html" style="text-align:center;">Cancel</a>
+		</section>
+
+		</div>
+
+<a href="./bookAppointment.html"  style="
+  text-decoration:none;"><div class="fixed"><b  style="color:white;">Schedule Now
+      </a></div>
+
+
+<script>
+    $(document).ready(function(){
+
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+
+</body>
+</html>

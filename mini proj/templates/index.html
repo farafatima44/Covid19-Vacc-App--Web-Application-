@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="./static/stylee.css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+$(document).ready(function(){
+ $(".p1").mouseenter(function(){
+  alert("enter your details correctly while scheduling");
+ });
+});
+</script>
+	<style>
+
+	div.fixed{
+  position:fixed;
+  bottom:0;
+  right:0;
+  width:180px;
+  padding:3px;
+  border:3px solid red;
+  background-color:green;
+ }
+ 
+ p{
+font-size: 18px
+}
+
+	</style>
+</head>
+
+<body>
+
+    <div class="wrap">
+        
+<!--        -->
+<!--        <div class="sidebar"> <b> <p><a href="./login.html " style="text-decoration:none;">Sign In </a>-->
+<!--        &nbsp &nbsp &nbsp &nbsp      		-->
+<!--		<a href="./signup.html " style="text-decoration:none;">Create An Account</a></p></b>-->
+        <div class="sidebar">
+        <img src="./static/menu.png" alt="" id="menuicon" width="40" height="20">
+           
+            <ul><center>  <h2 style="color:red;">Covac/Pharmacy</h2><br><br></center>
+                <li><a href="./main.html">Home</a></li>
+                <li><a href="./bookAppointment.html">Book Appointment</a></li>
+                <li><a href="./viewAppointments.html">View Appointments</a></li>
+                <li><a href="./reportChangeInHealth.html">HealthHUB</a></li>
+                <li><a href="./shop.html">Shop</a></li>
+                <li><a href="./ourDoctors.html">Our Doctors</a></li>
+                <li><a href="./covidCare.html">Covid Care</a></li>
+
+<!--				<li><a href="./signout.html">Sign Out</a></li>-->
+            </ul>
+     
+      	 </div>
+        
+
+        <section class="main">
+    <center>
+            <h1 style="background-color:red;" class="h1">
+                    <font color="white"> Covac/<small>Pharmacy</small>  </font>
+            </h1>
+    </center>
+      <img src="./static/33.jpg" width="1535" height="400">
+ <h1 class="sp">Get the FREE* <br>
+ COVID-19 Vaccine</h1><br>
+ <p class="sp">Schedule an appointment for the vaccine in select stores. Same-day <br>appointments available.</p>
+ <br>
+<b class="sp">No cost with Insurance or through a federal program for the uninsured.</b>
+<br>
+<br>
+     <h2 class="sp">India's <mark  class="p1">Covid-19 vaccine(s)</mark></h2><br>
+     <p  class="sp">India began administration of COVID-19 vaccines on 16 January 2021. As of<br> 3 August 2021, India has administered over 485 million doses overall, including <br>first and second doses of the currently-approved vaccines.<br>
+	 
+
+     India initially approved the Oxford–AstraZeneca vaccine (manufactured under<br> license by Serum Institute of India under the trade name Covishield) and <br>Covaxin (a vaccine developed locally by Bharat Biotech). They have since<br> been joined by the Sputnik V (manufactured under license by Dr. Reddy's <br>Laboratories) and Moderna vaccines, and other vaccine candidates <br>undergoing local clinical trials.
+     </p>
+     <br>
+     <h3 class="sp">What do we know about <i>Sputnik V?</i></h3><br>
+	 <p  class="sp">The vaccine, developed by Moscow's Gamaleya Institute, initially generated some<br> controversy after being rolled out before the final trial data had been released. But<br> scientists say its benefits have now been demonstrated.
+	</p>
+    
+	
+	 <p  class="sp">
+
+     It uses a cold-type virus, engineered to be harmless, as a carrier to deliver a small <br>fragment of the coronavirus to the body. After being vaccinated, the body starts <br>to produce antibodies especially tailored to the virus.
+
+     </p>
+
+     <p  class="sp">
+
+     It can be stored at temperatures of between 2 and 8C degrees (a standard fridge is <br>roughly 3-5C degrees) making it easier to transport and store.
+
+
+     </p>	<a href="./aboutVaccines.html " class="sp"><b>Read More About the Vaccines</b></a>	
+	
+     <a href="./bookAppointment.html"  style="
+  text-decoration:none;"><div class="fixed"><b  style="color:white;">Schedule Now
+      </a></div>
+
+
+		</section>
+        
+		</div>
+
+<script>
+    $(document).ready(function(){
+        
+        $("#menuicon").click(function(){
+            $(".sidebar").toggleClass("opensidebar")
+        });
+
+    });
+</script>
+
+
+</body>
+
+</html>
+
+
